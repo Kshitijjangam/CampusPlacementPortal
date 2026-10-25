@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Placement Portal | Training & Placement Cell</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top University Banner Header -->
+    <header class="top-header">
+        <div class="header-container">
+            <div class="college-logo-text">
+                <div class="logo-circle">T&P</div>
+                <div>
+                    <h1 class="portal-heading">DEPARTMENT OF TRAINING &amp; PLACEMENT</h1>
+                    <p class="portal-sub">Institutional Campus Recruitment &amp; Drive Management System</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <span class="session-badge">Academic Year 2025-2026</span>
+                <button class="btn btn-sm btn-outline-white" onclick="resetData()">Reset Demo Data</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Menu Bar -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <button class="nav-link active" data-tab="tab-dashboard">Dashboard &amp; Overview</button>
+            <button class="nav-link" data-tab="tab-drives">Company Drives</button>
+            <button class="nav-link" data-tab="tab-students">Student Directory</button>
+            <button class="nav-link" data-tab="tab-eligibility">Check Eligibility &amp; Apply</button>
+            <button class="nav-link" data-tab="tab-pipeline">Recruitment Pipeline</button>
+            <button class="nav-link" data-tab="tab-reports">Placement Reports</button>
+            <button class="nav-link" data-tab="tab-team">Team Work Breakdown</button>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="page-container">
+
+        <!-- ================= TAB 1: DASHBOARD ================= -->
+        <section id="tab-dashboard" class="tab-pane active">
+            <!-- 5 KPI Cards -->
+            <div class="kpi-grid">
+                <div class="kpi-card border-blue">
+                    <div class="kpi-title">TOTAL REGISTERED</div>
+                    <div class="kpi-number text-blue" id="kpi-total">0</div>
+                    <div class="kpi-caption">4th Year Candidates</div>
+                </div>
+                <div class="kpi-card border-green">
+                    <div class="kpi-title">PLACED STUDENTS</div>
+                    <div class="kpi-number text-green" id="kpi-placed">0</div>
+                    <div class="kpi-caption">Offer Letters Issued</div>
+                </div>
+                <div class="kpi-card border-emerald">
+                    <div class="kpi-title">PLACEMENT RATE</div>
+                    <div class="kpi-number text-emerald" id="kpi-rate">0%</div>
+                    <div class="kpi-caption">Overall Institutional %</div>
+                </div>
+                <div class="kpi-card border-purple">
+                    <div class="kpi-title">HIGHEST CTC OFFERED</div>
+                    <div class="kpi-number text-purple" id="kpi-highest">0.0 LPA</div>
+                    <div class="kpi-caption">Top Campus Offer</div>
+                </div>
+                <div class="kpi-card border-amber">
+                    <div class="kpi-title">AVERAGE CTC PACKAGE</div>
+                    <div class="kpi-number text-amber" id="kpi-average">0.0 LPA</div>
+                    <div class="kpi-caption">Across Placed Students</div>
+                </div>
+            </div>
+
+            <!-- Department Breakdown Table -->
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h3>Department-Wise Placement Statistics</h3>
+                    <button class="btn btn-sm btn-light" onclick="loadDashboard()">Refresh</button>
+                </div>
+                <div class="table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Department / Branch</th>
+                                <th>Total Registered</th>
+                                <th>Candidates Placed</th>
+                                <th>Unplaced Candidates</th>
+                                <th>Placement Percentage</th>
+                            </tr>
+                        </thead>
+                        <tbody id="branch-table-body">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TAB 2: COMPANY DRIVES ================= -->
+        <section id="tab-drives" class="tab-pane">
+            <div class="flex-between mb-3">
+                <div>
+                    <h2>Campus Placement Drives</h2>
+                    <p class="text-muted">Module 1 • Managed by Student 1 (Profile &amp; Drive Registry Lead)</p>
+                </div>
+                <button class="btn btn-primary" onclick="openDriveModal()">+ Register Company Drive</button>
+            </div>
+
+            <div class="card">
+                <div class="table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Drive ID</th>
+                                <th>Company Name</th>
+                                <th>Job Designation</th>
+                                <th>CTC (LPA)</th>
+                                <th>Min CGPA Cutoff</th>
+                                <th>Max Backlogs</th>
+                                <th>Eligible Branches</th>
+                                <th>Drive Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="drives-table-body">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TAB 3: STUDENT DIRECTORY ================= -->
+        <section id="tab-students" class="tab-pane">
+            <div class="flex-between mb-3">
+                <div>
+                    <h2>Student Academic Directory</h2>
+                    <p class="text-muted">Module 1 • Managed by Student 1 (Profile &amp; Drive Registry Lead)</p>
+                </div>
+                <button class="btn btn-primary" onclick="openStudentModal()">+ Register New Candidate</button>
+            </div>
+
+            <div class="filter-card card mb-3">
+                <div class="filter-row">
+                    <div class="filter-item">
+                        <label>Search Candidate:</label>
+                        <input type="text" id="stu-search" class="form-input" placeholder="Search by Name or USN..." onkeyup="filterStudentsTable()">
+                    </div>
+                    <div class="filter-item">
+                        <label>Filter by Branch:</label>
+                        <select id="stu-branch-filter" class="form-select" onchange="filterStudentsTable()">
+                            <option value="ALL">All Departments</option>
+                            <option value="CSE">CSE</option>
+                            <option value="ISE">ISE</option>
+                            <option value="ECE">ECE</option>
+                            <option value="MECH">MECH</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>USN / Roll No</th>
+                                <th>Candidate Name</th>
+                                <th>Email Address</th>
+                                <th>Branch</th>
+                                <th>CGPA</th>
+                                <th>Backlogs</th>
+                                <th>Technical Skills</th>
+                                <th>Placement Status</th>
+                                <th>Placed Company</th>
+                                <th>Package (LPA)</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="students-table-body">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TAB 4: CHECK ELIGIBILITY & APPLY ================= -->
+        <section id="tab-eligibility" class="tab-pane">
+            <div class="mb-3">
+                <h2>Automated Candidate Eligibility Evaluator</h2>
+                <p class="text-muted">Module 2 • Managed by Student 2 (Eligibility &amp; Filtering Lead)</p>
+            </div>
+
+            <div class="card p-4">
+                <div class="form-grid-2">
+                    <div class="form-group">
+                        <label class="form-label">Select Target Company Drive:</label>
+                        <select id="eval-drive-select" class="form-select" onchange="runEligibilityCheck()">
+                            <!-- Populated dynamically -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Select Candidate Profile:</label>
+                        <select id="eval-student-select" class="form-select" onchange="runEligibilityCheck()">
+                            <!-- Populated dynamically -->
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Verification Output Card -->
+                <div id="eligibility-verdict-box" class="verdict-card mt-3">
+                    <div class="verdict-banner" id="verdict-badge">STATUS: PENDING SELECTION</div>
+                    <div class="checks-list mt-3" id="verdict-checks-list">
+                        <!-- Checks rendered dynamically -->
+                    </div>
+                </div>
+
+                <div class="mt-4 flex-end">
+                    <button id="btn-submit-app" class="btn btn-success" disabled onclick="submitEligibilityApplication()">Submit Job Application</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TAB 5: RECRUITMENT PIPELINE ================= -->
+        <section id="tab-pipeline" class="tab-pane">
+            <div class="mb-3">
+                <h2>Recruitment Pipeline &amp; Stage Tracking</h2>
+                <p class="text-muted">Module 3 • Managed by Student 3 (Pipeline &amp; Interview Workflow Lead)</p>
+            </div>
+
+            <div class="card">
+                <div class="table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>App ID</th>
+                                <th>Student USN</th>
+                                <th>Candidate Name</th>
+                                <th>Company</th>
+                                <th>Job Role</th>
+                                <th>Applied Date</th>
+                                <th>Interview Schedule</th>
+                                <th>Current Stage</th>
+                                <th>Advance Stage</th>
+                            </tr>
+                        </thead>
+                        <tbody id="pipeline-table-body">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TAB 6: PLACEMENT REPORTS ================= -->
+        <section id="tab-reports" class="tab-pane">
+            <div class="flex-between mb-3">
+                <div>
+                    <h2>Institutional Placement Summary &amp; Export</h2>
+                    <p class="text-muted">Module 4 • Managed by Student 4 (Analytics &amp; GUI Lead)</p>
+                </div>
+                <button class="btn btn-primary" onclick="downloadPlacedCsv()">Export Placed Students to CSV</button>
+            </div>
+
+            <div class="card p-3">
+                <textarea id="reports-text-area" class="report-box" rows="18" readonly></textarea>
+            </div>
+        </section>
+
+        <!-- ================= TAB 7: TEAM DIVISION ================= -->
+        <section id="tab-team" class="tab-pane">
+            <div class="mb-3">
+                <h2>Project Work Breakdown Structure (Team of 4 Students)</h2>
+                <p class="text-muted">Formal Module Distribution &amp; 2-Minute Viva Voce Cheat-Sheet</p>
+            </div>
+
+            <div class="team-grid">
+                <!-- S1 -->
+                <div class="card team-box">
+                    <div class="team-head">
+                        <span class="avatar-tag">S1</span>
+                        <div>
+                            <h3>Student 1: Profile &amp; Drive Registry Lead</h3>
+                            <span class="sub-role">Module 1: Academic Data &amp; CSV Persistence</span>
+                        </div>
+                    </div>
+                    <ul class="task-list mt-3">
+                        <li>Candidate registration &amp; academic records management (CGPA, backlogs, skills)</li>
+                        <li>Company drive specifications (CTC, minimum cutoffs, eligible branches)</li>
+                        <li>CSV-based file persistence in <code>data/</code> folder</li>
+                    </ul>
+                    <div class="code-box mt-2">
+                        <strong>Source Files:</strong> <code>Student.java</code>, <code>CompanyDrive.java</code>, <code>DataStore.java</code>, <code>StudentPanel.java</code>
+                    </div>
+                    <div class="viva-box mt-2">
+                        <strong>Viva Defense Answer:</strong> <em>"We used local CSV files in the data directory so the portal is lightweight, 100% offline, and easily inspected by the college placement officer in Excel without database installation."</em>
+                    </div>
+                </div>
+
+                <!-- S2 -->
+                <div class="card team-box">
+                    <div class="team-head">
+                        <span class="avatar-tag">S2</span>
+                        <div>
+                            <h3>Student 2: Eligibility Engine Lead</h3>
+                            <span class="sub-role">Module 2: Automated Criteria Evaluation</span>
+                        </div>
+                    </div>
+                    <ul class="task-list mt-3">
+                        <li>Automated multi-factor evaluation (CGPA threshold, active backlogs cap)</li>
+                        <li>Department whitelist checking (allowing CSE, ISE, ECE)</li>
+                        <li>College Dream Company Policy enforcement (1.5x salary package upgrade rule)</li>
+                    </ul>
+                    <div class="code-box mt-2">
+                        <strong>Source Files:</strong> <code>EligibilityService.java</code>, <code>EligibilityPanel.java</code>
+                    </div>
+                    <div class="viva-box mt-2">
+                        <strong>Viva Defense Answer:</strong> <em>"I built the eligibility service. It verifies that unplaced students meet the cutoffs, and prevents already-placed students from applying unless the new drive offers at least 1.5x their existing package."</em>
+                    </div>
+                </div>
+
+                <!-- S3 -->
+                <div class="card team-box">
+                    <div class="team-head">
+                        <span class="avatar-tag">S3</span>
+                        <div>
+                            <h3>Student 3: Pipeline &amp; Workflow Lead</h3>
+                            <span class="sub-role">Module 3: Interview Stages &amp; Automated Offers</span>
+                        </div>
+                    </div>
+                    <ul class="task-list mt-3">
+                        <li>Candidate application lifecycle tracking across 7 recruitment rounds</li>
+                        <li>Interview date and slot scheduling</li>
+                        <li>Automated placement status synchronization upon offer issuance</li>
+                    </ul>
+                    <div class="code-box mt-2">
+                        <strong>Source Files:</strong> <code>Application.java</code>, <code>PipelinePanel.java</code>
+                    </div>
+                    <div class="viva-box mt-2">
+                        <strong>Viva Defense Answer:</strong> <em>"I built the candidate pipeline. When an applicant's stage is moved to OFFERED, the system automatically marks the candidate as PLACED with their package and updates institutional statistics."</em>
+                    </div>
+                </div>
+
+                <!-- S4 -->
+                <div class="card team-box">
+                    <div class="team-head">
+                        <span class="avatar-tag">S4</span>
+                        <div>
+                            <h3>Student 4: Analytics &amp; Full-Stack Lead</h3>
+                            <span class="sub-role">Module 4: Institutional KPIs &amp; Desktop/Web GUI</span>
+                        </div>
+                    </div>
+                    <ul class="task-list mt-3">
+                        <li>Placement rate %, highest package, average CTC, and department statistics</li>
+                        <li>MainFrame Swing GUI integration with tabbed panes</li>
+                        <li>Embedded Java HTTP server and one-click CSV export</li>
+                    </ul>
+                    <div class="code-box mt-2">
+                        <strong>Source Files:</strong> <code>AnalyticsService.java</code>, <code>MainFrame.java</code>, <code>WebServer.java</code>, <code>DashboardPanel.java</code>
+                    </div>
+                    <div class="viva-box mt-2">
+                        <strong>Viva Defense Answer:</strong> <em>"I developed the analytics engine and GUI. It aggregates live placement percentages and allows T&P coordinators to export placed lists directly to CSV format."</em>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal: Register Student -->
+    <div id="modal-student" class="modal-overlay" style="display: none;">
+        <div class="modal-card">
+            <div class="modal-head">
+                <h3>Register 4th Year Candidate Profile</h3>
+                <button class="modal-close-btn" onclick="closeStudentModal()">&times;</button>
+            </div>
+            <div class="modal-content">
+                <div class="form-group">
+                    <label class="form-label">USN / Roll Number:</label>
+                    <input type="text" id="new-stu-usn" class="form-input" placeholder="e.g. 1RV22CS045">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Full Name:</label>
+                    <input type="text" id="new-stu-name" class="form-input" placeholder="e.g. Rajesh Kumar">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email ID:</label>
+                    <input type="email" id="new-stu-email" class="form-input" placeholder="e.g. rajesh.cs@college.edu">
+                </div>
+                <div class="form-grid-2">
+                    <div class="form-group">
+                        <label class="form-label">Branch:</label>
+                        <select id="new-stu-branch" class="form-select">
+                            <option value="CSE">CSE</option>
+                            <option value="ISE">ISE</option>
+                            <option value="ECE">ECE</option>
+                            <option value="MECH">MECH</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Current CGPA:</label>
+                        <input type="number" step="0.01" id="new-stu-cgpa" class="form-input" placeholder="e.g. 8.20">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Active Backlogs:</label>
+                    <input type="number" id="new-stu-backlogs" class="form-input" value="0">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Technical Skills:</label>
+                    <input type="text" id="new-stu-skills" class="form-input" placeholder="e.g. Java, Python, SQL, React">
+                </div>
+            </div>
+            <div class="modal-foot">
+                <button class="btn btn-secondary" onclick="closeStudentModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="submitStudentForm()">Save Candidate</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Register Drive -->
+    <div id="modal-drive" class="modal-overlay" style="display: none;">
+        <div class="modal-card">
+            <div class="modal-head">
+                <h3>Register Company Placement Drive</h3>
+                <button class="modal-close-btn" onclick="closeDriveModal()">&times;</button>
+            </div>
+            <div class="modal-content">
+                <div class="form-group">
+                    <label class="form-label">Company Name:</label>
+                    <input type="text" id="new-drv-comp" class="form-input" placeholder="e.g. Cisco Systems">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Job Designation:</label>
+                    <input type="text" id="new-drv-role" class="form-input" placeholder="e.g. Software Development Engineer">
+                </div>
+                <div class="form-grid-2">
+                    <div class="form-group">
+                        <label class="form-label">CTC Package (in LPA):</label>
+                        <input type="number" step="0.1" id="new-drv-ctc" class="form-input" placeholder="e.g. 14.5">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Min CGPA Cutoff:</label>
+                        <input type="number" step="0.1" id="new-drv-cgpa" class="form-input" placeholder="e.g. 7.5">
+                    </div>
+                </div>
+                <div class="form-grid-2">
+                    <div class="form-group">
+                        <label class="form-label">Max Backlogs Allowed:</label>
+                        <input type="number" id="new-drv-backlogs" class="form-input" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Drive Date:</label>
+                        <input type="date" id="new-drv-date" class="form-input">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Eligible Branches (Comma-separated):</label>
+                    <input type="text" id="new-drv-branches" class="form-input" value="CSE,ISE,ECE">
+                </div>
+            </div>
+            <div class="modal-foot">
+                <button class="btn btn-secondary" onclick="closeDriveModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="submitDriveForm()">Publish Drive</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Alert -->
+    <div id="toast" class="toast-box"></div>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>
