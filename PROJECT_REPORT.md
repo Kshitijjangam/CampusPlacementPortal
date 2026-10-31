@@ -9,7 +9,7 @@
 ---
 
 ### **Submitted By:**
-1. **Student 1 (Team Lead):** [Student 1 Name] — *Roll No / USN: [USN-01]*  
+1. **Student 1 (Team Lead):** Kshitij Jangam — *Roll No / USN: [USN-01]*  
    *(Module 1: Student & Company Profile Management)*
 2. **Student 2:** [Student 2 Name] — *Roll No / USN: [USN-02]*  
    *(Module 2: Automated Eligibility & Criteria Engine)*
@@ -28,7 +28,7 @@ Academic Year: 2025 – 2026
 
 ## **CERTIFICATE**
 
-This is to certify that the mini-project entitled **"Campus Placement Drive & Job Application Portal"** is a bonafide record of work carried out by **[Student 1 Name], [Student 2 Name], [Student 3 Name], and [Student 4 Name]** in partial fulfillment for the award of the degree of **Bachelor of Technology in Computer Science and Engineering** of **[University Name]** during the academic year 2025–2026.
+This is to certify that the mini-project entitled **"Campus Placement Drive & Job Application Portal"** is a bonafide record of work carried out by **Kshitij Jangam, [Student 2 Name], [Student 3 Name], and [Student 4 Name]** in partial fulfillment for the award of the degree of **Bachelor of Technology in Computer Science and Engineering** of **[University Name]** during the academic year 2025–2026.
 
 <br><br>
 
@@ -49,7 +49,7 @@ We, the undersigned students of the 4th Year B.Tech Computer Science and Enginee
 
 We further declare that the content of this project is our original work and has not been submitted previously to any other university or institution for the award of any degree or diploma.
 
-1. **[Student 1 Name]** (USN: [USN-01]) — ____________________
+1. **Kshitij Jangam** (USN: [USN-01]) — ____________________
 2. **[Student 2 Name]** (USN: [USN-02]) — ____________________
 3. **[Student 3 Name]** (USN: [USN-03]) — ____________________
 4. **[Student 4 Name]** (USN: [USN-04]) — ____________________
@@ -372,7 +372,7 @@ classDiagram
 +---------------+------------------------+------------------------------------+--------------------------+
 | Student Name  | Role                   | Module Owned                       | Key Java Source Files    |
 +---------------+------------------------+------------------------------------+--------------------------+
-| Student 1     | Profile & Drive Lead   | Module 1: Student & Drive Registry | Student.java             |
+| Kshitij Jangam | Profile & Drive Lead   | Module 1: Student & Drive Registry | Student.java             |
 | (Team Lead)   |                        | - Candidate profiles               | CompanyDrive.java        |
 |               |                        | - Placement drives                 | DataStore.java           |
 |               |                        | - CSV storage                      | StudentPanel, DrivePanel |

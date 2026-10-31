@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Mini Project Report - Campus Placement Drive & Job Application Portal</title>
+  <style>
+    :root {
+      --primary: #0f2d59;
+      --secondary: #2d5a88;
+      --accent: #2563eb;
+      --text: #1f2937;
+      --light-bg: #f8fafc;
+      --border: #e2e8f0;
+      --card-bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 14pt;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: #f1f5f9;
+      padding: 20px;
+    }
+
+    .report-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 60px 70px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      border-radius: 4px;
+    }
+
+    /* Print styling */
+    @media print {
+      body {
+        background: transparent;
+        padding: 0;
+      }
+      .report-container {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .page-break {
+        page-break-after: always;
+        break-after: page;
+      }
+      h1, h2, h3 {
+        page-break-after: avoid;
+      }
+      table, figure {
+        page-break-inside: avoid;
+      }
+    }
+
+    .print-bar {
+      position: sticky;
+      top: 10px;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--primary);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 12px rgba(15, 45, 89, 0.25);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    .print-btn {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+    .print-btn:hover {
+      background: #1d4ed8;
+    }
+
+    /* Academic Cover Page */
+    .cover-page {
+      text-align: center;
+      padding: 30px 10px 60px;
+    }
+    .cover-pre {
+      font-size: 14pt;
+      font-weight: bold;
+      color: #4b5563;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .cover-title {
+      font-size: 24pt;
+      color: var(--primary);
+      font-weight: bold;
+      line-height: 1.25;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 16px;
+    }
+    .cover-sub {
+      font-size: 13pt;
+      font-style: italic;
+      color: #374151;
+      margin-bottom: 10px;
+    }
+    .cover-degree {
+      font-size: 16pt;
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 30px;
+    }
+    .cover-by {
+      margin: 25px 0 15px;
+      font-size: 13pt;
+      font-weight: bold;
+      color: var(--primary);
+      letter-spacing: 0.5px;
+    }
+    .cover-table {
+      margin: 0 auto 30px;
+      width: 100%;
+    }
+    .cover-guide {
+      margin-top: 25px;
+      font-size: 12pt;
+    }
+    .cover-college {
+      margin-top: 20px;
+      font-size: 13pt;
+      font-weight: bold;
+      color: var(--primary);
+      line-height: 1.4;
+    }
+
+    /* Headings */
+    h1 {
+      font-size: 18pt;
+      color: var(--primary);
+      border-bottom: 1.5px solid var(--primary);
+      padding-bottom: 6px;
+      margin-top: 30px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    h2 {
+      font-size: 15pt;
+      color: var(--secondary);
+      margin-top: 22px;
+      margin-bottom: 10px;
+    }
+    h3 {
+      font-size: 13pt;
+      color: #1f2937;
+      margin-top: 16px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      text-align: justify;
+      margin-bottom: 14px;
+      text-indent: 0;
+    }
+
+    ul, ol {
+      margin-left: 28px;
+      margin-bottom: 14px;
+    }
+    li {
+      margin-bottom: 6px;
+      text-align: justify;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0 24px;
+      font-size: 11pt;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 9px 12px;
+      text-align: left;
+    }
+    th {
+      background-color: var(--primary);
+      color: white;
+      font-weight: bold;
+      text-align: center;
+    }
+    tr:nth-child(even) td {
+      background-color: #f8fafc;
+    }
+
+    /* Signatures */
+    .sig-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 50px;
+      text-align: center;
+    }
+    .sig-line {
+      border-top: 1px dashed #64748b;
+      padding-top: 8px;
+      font-size: 11pt;
+      font-weight: bold;
+    }
+
+    /* Code & Diagrams */
+    pre {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 14px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 10pt;
+      overflow-x: auto;
+      margin: 16px 0;
+      border-radius: 4px;
+      line-height: 1.35;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      font-size: 10pt;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+    .badge-pass { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
+    .badge-lead { background: #dbeafe; color: #1e40af; border: 1px solid #93c5fd; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Print Action Bar -->
+  <div class="print-bar no-print">
+    <div>
+      <strong>Campus Placement Portal</strong> • Academic Mini Project Report
+    </div>
+    <div>
+      <button class="print-btn" onclick="window.print()">
+        🖨️ Print / Save as PDF (Ctrl + P)
+      </button>
+    </div>
+  </div>
+
+  <div class="report-container">
+
+    <!-- ==================== COVER / TITLE PAGE ==================== -->
+    <div class="cover-page">
+      <div class="cover-pre">A MINI PROJECT REPORT ON</div>
+      <div class="cover-title">
+        Campus Placement Drive &<br>Job Application Portal
+      </div>
+      <div class="cover-sub">
+        Submitted in partial fulfillment of the requirements for the award of the degree of
+      </div>
+      <div class="cover-degree">
+        BACHELOR OF TECHNOLOGY<br>
+        <span style="font-size: 14pt; color: #374151;">IN COMPUTER SCIENCE AND ENGINEERING</span>
+      </div>
+
+      <div class="cover-by">SUBMITTED BY (TEAM OF 4):</div>
+      <table class="cover-table">
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>Roll No / USN</th>
+            <th>Assigned Module Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Kshitij Jangam (Lead)</strong></td>
+            <td>[USN-01]</td>
+            <td>Module 1: Student & Company Profile Registry</td>
+          </tr>
+          <tr>
+            <td><strong>[Student 2 Name]</strong></td>
+            <td>[USN-02]</td>
+            <td>Module 2: Automated Eligibility & Criteria Engine</td>
+          </tr>
+          <tr>
+            <td><strong>[Student 3 Name]</strong></td>
+            <td>[USN-03]</td>
+            <td>Module 3: Application Pipeline & Interview Tracker</td>
+          </tr>
+          <tr>
+            <td><strong>[Student 4 Name]</strong></td>
+            <td>[USN-04]</td>
+            <td>Module 4: Swing GUI Integration & Analytics Reporting</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="cover-guide">
+        <em>Under the Guidance of</em><br>
+        <strong style="font-size: 13pt; color: var(--primary);">[Guide Name]</strong><br>
+        Assistant Professor, Department of Computer Science & Engineering
+      </div>
+
+      <div class="cover-college">
+        DEPARTMENT OF COMPUTER SCIENCE & ENGINEERING<br>
+        [COLLEGE / INSTITUTION NAME]<br>
+        ACADEMIC YEAR: 2025 – 2026
+      </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ==================== CERTIFICATE ==================== -->
+    <h1>CERTIFICATE OF BONAFIDE WORK</h1>
+    <p style="text-align: center; font-style: italic; color: #64748b; margin-bottom: 25px;">
+      Department of Computer Science & Engineering • [College Name]
+    </p>
+
+    <p style="line-height: 1.8; margin-top: 30px;">
+      This is to certify that the mini-project report entitled 
+      <strong>"CAMPUS PLACEMENT DRIVE & JOB APPLICATION PORTAL"</strong> is a bonafide record of work carried out collaboratively by 
+      <strong>Kshitij Jangam (USN-01), [Student 2 Name] (USN-02), [Student 3 Name] (USN-03), and [Student 4 Name] (USN-04)</strong>, 
+      students of the 4th Year B.Tech in Computer Science & Engineering, in partial fulfillment of the requirements for the award of the degree of 
+      <strong>Bachelor of Technology in Computer Science & Engineering</strong> of [University Name] during the academic year 2025–2026.
+    </p>
+    <p style="line-height: 1.8;">
+      The project report has been approved as it satisfies the academic requirements prescribed for the Mini-Project curriculum.
+    </p>
+
+    <div class="sig-grid" style="margin-top: 60px;">
+      <div>
+        <div class="sig-line">
+          [Guide Name]<br>
+          <span style="font-weight: normal; font-size: 10pt;">Project Guide, Dept. of CSE</span>
+        </div>
+      </div>
+      <div>
+        <div class="sig-line">
+          Head of Department (HOD)<br>
+          <span style="font-weight: normal; font-size: 10pt;">Department of Computer Science & Engg.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sig-grid" style="margin-top: 50px;">
+      <div>
+        <div class="sig-line">
+          Principal / Dean<br>
+          <span style="font-weight: normal; font-size: 10pt;">[College Name]</span>
+        </div>
+      </div>
+      <div>
+        <div class="sig-line">
+          College Institutional Seal<br>
+          <span style="font-weight: normal; font-size: 10pt;">Office of Academic Affairs</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 40px; font-size: 11pt;">
+      <p><strong>Examiners:</strong></p>
+      <p>1. Internal Examiner: ____________________________________ &nbsp;&nbsp;&nbsp;&nbsp; Date: _________________</p>
+      <p>2. External Examiner: ____________________________________ &nbsp;&nbsp;&nbsp;&nbsp; Date: _________________</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ==================== DECLARATION ==================== -->
+    <h1>STUDENT DECLARATION</h1>
+    <p style="line-height: 1.8; margin-top: 25px;">
+      We, the undersigned students of the Department of Computer Science & Engineering, hereby declare that the project report entitled 
+      <strong>"Campus Placement Drive & Job Application Portal"</strong> is an authentic and original piece of work carried out by our team 
+      under the guidance of <strong>[Guide Name]</strong>, Assistant Professor, Department of Computer Science & Engineering, [College Name].
+    </p>
+    <p style="line-height: 1.8;">
+      We confirm that this project has not been submitted previously to any university or institution for the award of any degree, 
+      diploma, or academic distinction. All external sources, code libraries, and literature references have been duly acknowledged.
+    </p>
+
+    <div style="margin-top: 50px;">
+      <p>1. <strong>Kshitij Jangam</strong> (USN: [USN-01]) &nbsp;&nbsp;&nbsp;&nbsp; Signature: ___________________________</p><br>
+      <p>2. <strong>[Student 2 Name]</strong> (USN: [USN-02]) &nbsp;&nbsp;&nbsp;&nbsp; Signature: ___________________________</p><br>
+      <p>3. <strong>[Student 3 Name]</strong> (USN: [USN-03]) &nbsp;&nbsp;&nbsp;&nbsp; Signature: ___________________________</p><br>
+      <p>4. <strong>[Student 4 Name]</strong> (USN: [USN-04]) &nbsp;&nbsp;&nbsp;&nbsp; Signature: ___________________________</p><br>
+      <p><strong>Date:</strong> ________________________</p>
+      <p><strong>Place:</strong> [City, State]</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ==================== ACKNOWLEDGEMENT ==================== -->
+    <h1>ACKNOWLEDGEMENT</h1>
+    <p style="line-height: 1.8; margin-top: 25px;">
+      The successful completion of this mini-project is the culmination of sustained effort, institutional guidance, and teamwork. 
+      We take this opportunity to express our profound gratitude to all individuals who assisted and encouraged us throughout this endeavor.
+    </p>
+    <p style="line-height: 1.8;">
+      We express our deep gratitude and indebtedness to our project guide, <strong>[Guide Name]</strong>, Assistant Professor, 
+      Department of Computer Science & Engineering, for their valuable suggestions, insightful technical advice, and continuous encouragement 
+      during the design and implementation phases of this system.
+    </p>
+    <p style="line-height: 1.8;">
+      We extend our heartfelt gratitude to <strong>[HOD Name]</strong>, Head of the Department of Computer Science & Engineering, 
+      for granting us access to the computer laboratories and providing all requisite department infrastructure.
+    </p>
+    <p style="line-height: 1.8;">
+      We are also thankful to our Principal, <strong>[Principal Name]</strong>, for providing an academic environment conducive to project-based learning.
+    </p>
+    <p style="line-height: 1.8;">
+      Finally, we thank our families, peers, and lab assistants whose ongoing support made this work possible.
+    </p>
+
+    <div class="page-break"></div>
+
+    <!-- ==================== ABSTRACT ==================== -->
+    <h1>ABSTRACT</h1>
+    <p style="line-height: 1.8; margin-top: 25px;">
+      Campus recruitment represents one of the most critical annual operations in engineering colleges, facilitating the transition of final-year 
+      students into corporate engineering careers. Despite its importance, many college Training and Placement (T&P) cells continue to manage 
+      recruitment drives through fragmented Google Forms, paper logbooks, and complex spreadsheets. This manual paradigm creates severe bottlenecks: 
+      ineligible candidates apply by mistake, placed students hoard multiple job offers preventing unplaced peers from securing jobs, multi-stage 
+      interview tracking is uncoordinated, and compiling institutional placement metrics takes days of manual effort.
+    </p>
+    <p style="line-height: 1.8;">
+      To address these challenges, this project presents the <strong>Campus Placement Drive & Job Application Portal</strong>, a desktop software 
+      application engineered in Java using standard <strong>Java Swing (AWT / JFC)</strong> and lightweight <strong>CSV-based persistence</strong>. 
+      The system is designed with a strict 4-tier modular division across 4 students:
+    </p>
+    <ul>
+      <li><strong>Module 1 (Student 1 - Lead):</strong> Candidate & Company Registry managing student records (USN, name, branch, CGPA, backlogs, skills) and recruitment drives (CTC, cutoffs, roles, dates).</li>
+      <li><strong>Module 2 (Student 2):</strong> Automated Eligibility Engine enforcing CGPA cutoffs, backlog limits, branch whitelists, and an institutional <strong>Dream Company 1.5x Upgrade Rule</strong>.</li>
+      <li><strong>Module 3 (Student 3):</strong> Multi-stage Recruitment Pipeline tracking candidates across 7 stages (APPLIED → SHORTLISTED → ONLINE_TEST → TECH_ROUND → HR_ROUND → OFFERED) with automated student offer synchronization.</li>
+      <li><strong>Module 4 (Student 4):</strong> Executive Swing GUI, Placement Analytics (highest/average CTC, branch-wise percentages), and one-click CSV export for Microsoft Excel.</li>
+    </ul>
+    <p style="line-height: 1.8;">
+      The entire system runs <strong>100% offline from a single executable JAR file with zero database configuration</strong>, providing a dependable, 
+      fast, and academically authentic project demonstration platform.
+    </p>
+
+    <div class="page-break"></div>
+
+    <!-- ==================== TABLE OF CONTENTS ==================== -->
+    <h1>TABLE OF CONTENTS</h1>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 15%;">Chapter</th>
+          <th style="width: 70%;">Chapter Title</th>
+          <th style="width: 15%;">Page</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>—</td><td>Certificate of Bonafide Work</td><td>ii</td></tr>
+        <tr><td>—</td><td>Student Declaration</td><td>iii</td></tr>
+        <tr><td>—</td><td>Acknowledgement</td><td>iv</td></tr>
+        <tr><td>—</td><td>Abstract</td><td>v</td></tr>
+        <tr><td><strong>1</strong></td><td><strong>Introduction & Problem Formulation</strong></td><td><strong>1</strong></td></tr>
+        <tr><td><strong>2</strong></td><td><strong>Literature Survey & Feasibility Analysis</strong></td><td><strong>4</strong></td></tr>
+        <tr><td><strong>3</strong></td><td><strong>System Requirement Specifications (SRS)</strong></td><td><strong>7</strong></td></tr>
+        <tr><td><strong>4</strong></td><td><strong>System Architecture & Design</strong></td><td><strong>10</strong></td></tr>
+        <tr><td><strong>5</strong></td><td><strong>Detailed Implementation & 4-Student Work Breakdown</strong></td><td><strong>15</strong></td></tr>
+        <tr><td><strong>6</strong></td><td><strong>System Testing & Verification Matrix</strong></td><td><strong>22</strong></td></tr>
+        <tr><td><strong>7</strong></td><td><strong>User Interface Walkthrough & Screenshots</strong></td><td><strong>25</strong></td></tr>
+        <tr><td><strong>8</strong></td><td><strong>Student Work Allocation & Viva-Voce Guide</strong></td><td><strong>29</strong></td></tr>
+        <tr><td><strong>9</strong></td><td><strong>Conclusion & Future Work</strong></td><td><strong>35</strong></td></tr>
+        <tr><td>—</td><td>References & Bibliography</td><td>37</td></tr>
+      </tbody>
+    </table>
+
+    <div class="page-break"></div>
+
+    <!-- ==================== CHAPTER 1 ==================== -->
+    <h1>CHAPTER 1: INTRODUCTION & PROBLEM FORMULATION</h1>
+    <h2>1.1 Background & Motivation</h2>
+    <p>
+      In undergraduate engineering education, campus recruitment drives organized by the Training and Placement (T&P) cell are the primary avenue 
+      for graduating students to secure employment in multinational software corporations, product startups, and core engineering enterprises. 
+      In a typical institution with 500 to 1,500 students spanning Computer Science, Information Science, Electronics, and Mechanical Engineering, 
+      recruitment involves dozens of visiting corporate recruiters with differing eligibility cutoffs, backlog allowances, and interview stages.
+    </p>
+
+    <h2>1.2 Problem Statement</h2>
+    <p>
+      Traditional reliance on spreadsheets and survey forms causes persistent administrative problems:
+    </p>
+    <ul>
+      <li><strong>Eligibility Errors:</strong> Students with active backlogs or low CGPA apply without qualification, embarrassing the college during company screenings.</li>
+      <li><strong>Offer Hoarding:</strong> Students who already hold job offers apply for similar low-tier drives, denying unplaced students fair opportunities.</li>
+      <li><strong>Interview Pipeline Opacity:</strong> Coordinators lack real-time visibility into which candidates have cleared coding assessments, technical interviews, and HR discussions.</li>
+      <li><strong>Manual Reporting Delay:</strong> Calculating institutional metrics (placement rate, median package, branch-wise statistics) requires hours of tedious manual spreadsheet work.</li>
+    </ul>
+
+    <h2>1.3 Project Objectives</h2>
+    <ul>
+      <li>Build an interactive Java Swing desktop application that operates completely offline.</li>
+      <li>Automate real-time candidate qualification checks with visual pass/fail audits.</li>
+      <li>Enforce an anti-hoarding <strong>Dream Company 1.5x Rule</strong>.</li>
+      <li>Provide a 7-stage recruitment tracking workflow with automatic placement status synchronization.</li>
+      <li>Compute institutional placement metrics and support one-click CSV export for Microsoft Excel.</li>
+    </ul>
+
+    <div class="page-break"></div>
+
+    <!-- ==================== CHAPTER 2 ==================== -->
+    <h1>CHAPTER 2: LITERATURE SURVEY & FEASIBILITY ANALYSIS</h1>
+    <h2>2.1 Comparative Analysis</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Manual Spreadsheets</th>
+          <th>Enterprise Web ERPs</th>
+          <th>Proposed Java Desktop Portal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Setup & Deployment</strong></td>
+          <td>Zero (Basic Excel)</td>
+          <td>Heavy (Database + Web Server)</td>
+          <td>Zero (Single Runnable JAR)</td>
+        </tr>
+        <tr>
+          <td><strong>Internet Dependency</strong></td>
+          <td>None</td>
+          <td>Continuous High Speed Required</td>
+          <td>100% Offline Capable</td>
+        </tr>
+        <tr>
+          <td><strong>Eligibility Automation</strong></td>
+          <td>Manual Formulae / VLOOKUP</td>
+          <td>Configurable Backend</td>
+          <td>Instant Real-Time Verification</td>
+        </tr>
+        <tr>
+          <td><strong>Anti-Hoarding Rule</strong></td>
+          <td>Manual Verification</td>
+          <td>Custom Enterprise Add-on</td>
+          <td>Built-in 1.5x Dream Company Rule</td>
+        </tr>
+        <tr>
+          <td><strong>Resource Footprint</strong></td>
+          <td>Moderate</td>
+          <td>Heavy RAM & Browser Usage</td>
+          <td>Lightweight (&lt; 75 MB RAM)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>2.2 Feasibility Study</h2>
+    <p>
+      • <strong>Technical Feasibility:</strong> The system is implemented using standard Java Foundation Classes (Swing / AWT) and Java NIO file persistence. It is completely independent of external database server software.<br>
+      • <strong>Operational Feasibility:</strong> Standard desktop components (tabs, tables, search fields) ensure intuitive operation without specialized user training.<br>
+      • <strong>Economic Feasibility:</strong> Utilizes open-source OpenJDK and zero-cost tools, incurring no licensing or cloud hosting costs.<br>
+      • <strong>Schedule Feasibility:</strong> Modular 4-part architecture allowed the 4-student team to complete development and testing within the academic term.
+    </p>
+
+    <div class="page-break"></div>
+
+    <!-- ==================== CHAPTER 3 ==================== -->
+    <h1>CHAPTER 3: SYSTEM REQUIREMENT SPECIFICATIONS (SRS)</h1>
+    <h2>3.1 Functional Requirements</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>FR ID</th>
+          <th>Requirement Title</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>FR-01</td><td>Student Registry</td><td>Add, view, search, and manage candidate profiles (USN, name, branch, CGPA, backlogs, skills).</td></tr>
+        <tr><td>FR-02</td><td>Drive Registry</td><td>Record visiting companies with package (CTC in LPA), minimum CGPA, backlog cap, eligible branches, and dates.</td></tr>
+        <tr><td>FR-03</td><td>Eligibility Engine</td><td>Execute deterministic criteria evaluation with detailed pass/fail feedback and button activation.</td></tr>
+        <tr><td>FR-04</td><td>Dream Company Policy</td><td>Enforce that placed students can only apply for new drives offering at least 1.5x their current package.</td></tr>
+        <tr><td>FR-05</td><td>Pipeline Tracking</td><td>Manage candidate progression across 7 stages: APPLIED → SHORTLISTED → ONLINE_TEST → TECH_ROUND → HR_ROUND → OFFERED.</td></tr>
+        <tr><td>FR-06</td><td>Automated Offer Sync</td><td>Automatically update a candidate's status to PLACED when their application reaches the OFFERED stage.</td></tr>
+        <tr><td>FR-07</td><td>Placement Analytics</td><td>Calculate total students, placed count, placement percentage, maximum package, and average package in real time.</td></tr>
+        <tr><td>FR-08</td><td>CSV Export</td><td>Export placed candidates directly to a standard CSV file for administrative reporting in Excel.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>3.2 Non-Functional Requirements</h2>
+    <p>
+      • <strong>NFR-01 (Portability):</strong> Operates on Windows, macOS, and Linux on any system supporting Java SE 8+.<br>
+      • <strong>NFR-02 (Zero-Configuration):</strong> Operates out-of-the-box without installing MySQL, Oracle, or Web servers.<br>
+      • <strong>NFR-03 (Performance):</strong> Instantaneous table search and eligibility evaluation in under 100 milliseconds.<br>
+      • <strong>NFR-04 (Data Integrity):</strong> Prevents duplicate student USNs and guarantees safe comma-separated record serialization.
+    </p>
+
+    <div class="page-break"></div>
+
+    <!-- ==================== CHAPTER 4 ==================== -->
+    <h1>CHAPTER 4: SYSTEM ARCHITECTURE & DESIGN</h1>
+    <h2>4.1 Architecture Diagram</h2>
+    <pre>
++-----------------------------------------------------------------------------------+
+|                             PRESENTATION LAYER (SWING)                            |
+|  +----------------+  +---------------+  +--------------+  +--------------------+  |
+|  | DashboardPanel |  | StudentPanel  |  |  DrivePanel  |  |  EligibilityPanel  |  |
+|  +----------------+  +---------------+  +--------------+  +--------------------+  |
+|  |                 PipelinePanel     |  |                 ReportPanel          |  |
+|  +-----------------------------------+  +--------------------------------------+  |
++-----------------------------------------+-----------------------------------------+
+                                          |
+                                          v
++-----------------------------------------------------------------------------------+
+|                                SERVICE LAYER                                      |
+|  +------------------------------------+  +-------------------------------------+  |
+|  |        EligibilityService          |  |          AnalyticsService           |  |
+|  |  - CGPA Filter                     |  |  - Placement Percentage             |  |
+|  |  - Backlog Threshold Check         |  |  - Average & Highest CTC            |  |
+|  |  - Branch Whitelist Check          |  |  - Branch-wise Placement Breakdown  |  |
+|  |  - Dream Company 1.5x Upgrade Rule |  |                                     |  |
+|  +------------------------------------+  +-------------------------------------+  |
++-----------------------------------------+-----------------------------------------+
+                                          |
+                                          v
++-----------------------------------------------------------------------------------+
+|                            DATA PERSISTENCE LAYER                                 |
+|  +-----------------------------------------------------------------------------+  |
+|  |                                  DataStore                                  |  |
+|  |       In-Memory Collections: List&lt;Student&gt;, List&lt;Drive&gt;, List&lt;Application&gt;  |  |
+|  +-----------------------------------------------------------------------------+  |
+|           |                              |                               |        |
+|           v                              v                               v        |
+|   [ students.csv ]                [ drives.csv ]               [ applications.csv ]|
++-----------------------------------------------------------------------------------+
+    </pre>
+
+    <h2>4.2 CSV Storage Schemas</h2>
+    <p><strong>1. students.csv:</strong> <code>usn, name, email, branch, cgpa, activeBacklogs, skills, placementStatus, placedCompany, placedPackageLpa</code></p>
+    <p><strong>2. drives.csv:</strong> <code>driveId, companyName, jobRole, ctcLpa, minCgpa, maxBacklogs, eligibleBranches, driveDate, status</code></p>
+    <p><strong>3. applications.csv:</strong> <code>applicationId, studentUsn, studentName, driveId, companyName, jobRole, appliedDate, stage, interviewDate</code></p>
+
+    <div class="page-break"></div>
+
+    <!-- ==================== CHAPTER 5 ==================== -->
+    <h1>CHAPTER 5: DETAILED IMPLEMENTATION BY MODULE</h1>
+    
+    <h2>5.1 Module 1: Student & Company Profile Registry (Student 1 - Lead)</h2>
+    <p>
+      • <strong>Classes:</strong> <code>Student.java</code>, <code>CompanyDrive.java</code>, <code>DataStore.java</code>, <code>StudentPanel.java</code>, <code>DrivePanel.java</code><br>
+      • <strong>Implementation:</strong> Formulates core entity models, handles CSV reading/writing, and implements searchable tabular views using <code>TableRowSorter</code>. Pre-seeded realistic student records and top-tier company drives.
+    </p>
+
+    <h2>5.2 Module 2: Automated Eligibility Engine (Student 2)</h2>
+    <p>
+      • <strong>Classes:</strong> <code>EligibilityService.java</code>, <code>EligibilityPanel.java</code><br>
+      • <strong>Implementation:</strong> Implements 4-factor eligibility verification:
+    </p>
+    <ul>
+      <li><strong>CGPA Cutoff:</strong> <code>student.getCgpa() &gt;= drive.getMinCgpa()</code></li>
+      <li><strong>Backlog Limit:</strong> <code>student.getActiveBacklogs() &lt;= drive.getMaxBacklogs()</code></li>
+      <li><strong>Branch Whitelist:</strong> <code>drive.getEligibleBranches().contains(student.getBranch())</code></li>
+      <li><strong>Dream Company Rule:</strong> If placed, <code>drive.getCtcLpa() &gt;= 1.5 * student.getPlacedPackageLpa()</code></li>
+    </ul>
+
+    <h2>5.3 Module 3: Recruitment Pipeline & Interview Tracker (Student 3)</h2>
+    <p>
+      • <strong>Classes:</strong> <code>Application.java</code>, <code>PipelinePanel.java</code><br>
+      • <strong>Implementation:</strong> Manages candidates across 7 progression stages. Includes an automated offer synchronization trigger: transitioning an application to <code>OFFERED</code> immediately marks the candidate as <code>PLACED</code>, stores company details, and saves the record.
+    </p>
+
+    <h2>5.4 Module 4: Swing GUI Integration & Analytics (Student 4)</h2>
+    <p>
+      • <strong>Classes:</strong> <code>AnalyticsService.java</code>, <code>DashboardPanel.java</code>, <code>ReportPanel.java</code>, <code>MainFrame.java</code>, <code>Main.java</code><br>
+      • <strong>Implementation:</strong> Orchestrates the primary <code>JTabbedPane</code> window with native look-and-feel. Computes university KPIs (placement percentage, average/highest CTC, branch distribution) and generates Excel-compatible CSV exports via <code>JFileChooser</code>.
+    </p>
+
+    <div class="page-break"></div>
+
+    <!-- ==================== CHAPTER 6 ==================== -->
+    <h1>CHAPTER 6: SYSTEM TESTING & VERIFICATION MATRIX</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Test ID</th>
+          <th>Module</th>
+          <th>Input Test Case</th>
+          <th>Expected Verdict</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>TC-01</td><td>Student Registry</td><td>Register student USN 1RV22CS099, CGPA 8.75</td><td>Profile saved to CSV and rendered in table</td><td><span class="badge badge-pass">PASSED</span></td></tr>
+        <tr><td>TC-02</td><td>Drive Registry</td><td>Add drive: Google, 28.5 LPA, Min CGPA 8.5</td><td>Drive saved to CSV and visible in eligibility tab</td><td><span class="badge badge-pass">PASSED</span></td></tr>
+        <tr><td>TC-03</td><td>Dynamic Search</td><td>Search "Aarav" in Student Directory</td><td>JTable dynamically isolates matching candidate record</td><td><span class="badge badge-pass">PASSED</span></td></tr>
+        <tr><td>TC-04</td><td>Eligibility Check</td><td>Aarav (CGPA 8.85, 0 backlogs) vs Google (8.5)</td><td>All checks PASS; Application button enabled</td><td><span class="badge badge-pass">PASSED</span></td></tr>
+        <tr><td>TC-05</td><td>CGPA Rejection</td><td>Karan (CGPA 6.80) vs Google (Min 8.5)</td><td>FAIL: CGPA below cutoff; Button disabled</td><td><span class="badge badge-pass">PASSED</span></td></tr>
+        <tr><td>TC-06</td><td>Backlog Rejection</td><td>Karan (1 backlog) vs Google (Max 0)</td><td>FAIL: Active backlogs exceed limit</td><td><span class="badge badge-pass">PASSED</span></td></tr>
+        <tr><td>TC-07</td><td>Branch Rejection</td><td>Vikas (MECH) vs Google (Whitelisted: CSE|ISE)</td><td>FAIL: Branch MECH not whitelisted</td><td><span class="badge badge-pass">PASSED</span></td></tr>
+        <tr><td>TC-08</td><td>Dream Rule (Pass)</td><td>Placed Rohan (7.2 LPA) applies to Google (28.5 LPA)</td><td>PASS: 28.5 LPA &gt;= 1.5x of 7.2 (10.8 LPA threshold)</td><td><span class="badge badge-pass">PASSED</span></td></tr>
+        <tr><td>TC-09</td><td>Dream Rule (Fail)</td><td>Placed Sneha (18.0 LPA) applies to Infosys (4.5 LPA)</td><td>FAIL: Package below 1.5x of existing offer</td><td><span class="badge badge-pass">PASSED</span></td></tr>
+        <tr><td>TC-10</td><td>Pipeline Advance</td><td>Advance application to TECHNICAL_INTERVIEW</td><td>Stage and interview schedule updated in table</td><td><span class="badge badge-pass">PASSED</span></td></tr>
+        <tr><td>TC-11</td><td>Auto-Offer Sync</td><td>Advance application stage to OFFERED</td><td>Candidate auto-updated to PLACED; KPIs updated</td><td><span class="badge badge-pass">PASSED</span></td></tr>
+        <tr><td>TC-12</td><td>CSV Export</td><td>Click 'Export Placed to CSV' in ReportPanel</td><td>Generates valid placed_students_report.csv file</td><td><span class="badge badge-pass">PASSED</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="page-break"></div>
+
+    <!-- ==================== CHAPTER 7 ==================== -->
+    <h1>CHAPTER 7: USER INTERFACE WALKTHROUGH</h1>
+    <p>
+      The system features six organized tabs:
+    </p>
+    <ul>
+      <li><strong>Tab 1 (Executive Dashboard):</strong> Real-time placement summary cards (Total Students: 8, Placed: 4, Placement Rate: 50.0%, Highest CTC: 34.0 LPA, Average CTC: 19.7 LPA) and branch breakdown table.</li>
+      <li><strong>Tab 2 (Company Drives):</strong> Listing of visiting organizations, roles, CTC, cutoffs, and schedules.</li>
+      <li><strong>Tab 3 (Students Directory):</strong> Candidate profiles with live substring search filtering and student addition modal.</li>
+      <li><strong>Tab 4 (Apply & Eligibility Checker):</strong> Dropdown selector evaluating candidates against company cutoffs with green/red status checks and button activation.</li>
+      <li><strong>Tab 5 (Application Pipeline):</strong> Interview tracker across 7 stages with interview scheduling and automated offer synchronization.</li>
+      <li><strong>Tab 6 (Placement Reports):</strong> One-click CSV export utility generating spreadsheet reports for Excel.</li>
+    </ul>
+
+    <div class="page-break"></div>
+
+    <!-- ==================== CHAPTER 8 ==================== -->
+    <h1>CHAPTER 8: WORK ALLOCATION & VIVA-VOCE GUIDE</h1>
+    <h2>8.1 4-Student Work Allocation Matrix</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Student & Role</th>
+          <th>Module Owned</th>
+          <th>Core Classes</th>
+          <th>Key Responsibilities</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Student 1 (Lead)<br>Kshitij Jangam</strong></td>
+          <td>Module 1: Student & Company Profile Registry</td>
+          <td><code>Student.java</code><br><code>CompanyDrive.java</code><br><code>DataStore.java</code><br><code>StudentPanel.java</code></td>
+          <td>Entity modeling, CSV file serialization, searchable tables, sample data seeding.</td>
+        </tr>
+        <tr>
+          <td><strong>Student 2<br>[Student 2 Name]</strong></td>
+          <td>Module 2: Automated Eligibility Engine</td>
+          <td><code>EligibilityService.java</code><br><code>EligibilityPanel.java</code></td>
+          <td>Multi-criteria qualification algorithms, Dream Company 1.5x rule, real-time feedback UI.</td>
+        </tr>
+        <tr>
+          <td><strong>Student 3<br>[Student 3 Name]</strong></td>
+          <td>Module 3: Application Pipeline & Interviews</td>
+          <td><code>Application.java</code><br><code>PipelinePanel.java</code></td>
+          <td>7-stage recruitment lifecycle, interview scheduling, automated placement offer sync.</td>
+        </tr>
+        <tr>
+          <td><strong>Student 4<br>[Student 4 Name]</strong></td>
+          <td>Module 4: Swing GUI & Analytics</td>
+          <td><code>AnalyticsService.java</code><br><code>DashboardPanel.java</code><br><code>ReportPanel.java</code><br><code>MainFrame.java</code></td>
+          <td>Main JTabbedPane container, native OS look-and-feel, KPI calculation, CSV report exporter.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>8.2 Viva-Voce Q&A Cheat Sheet</h2>
+    <p><strong>For Student 1 (Profile & Drive Management):</strong><br>
+    <em>Q: Why use CSV rather than MySQL or SQLite?</em><br>
+    A: For an engineering mini-project, portability and zero-configuration are critical. MySQL requires external server services and configuration that often break on external examiner laptops. CSV flat files provide human-readable, reliable persistence handled natively by Java without setup friction.</p>
+
+    <p><strong>For Student 2 (Automated Eligibility Engine):</strong><br>
+    <em>Q: What is the Dream Company 1.5x rule?</em><br>
+    A: To prevent offer hoarding where placed candidates monopolize lower-tier drives, our policy restricts placed candidates to new drives offering at least 150% of their current package (<code>New CTC &gt;= 1.5 * Current CTC</code>).</p>
+
+    <p><strong>For Student 3 (Recruitment Pipeline):</strong><br>
+    <em>Q: How does automated offer synchronization work?</em><br>
+    A: When an application is moved to <code>OFFERED</code> in <code>PipelinePanel</code>, the system automatically marks the candidate as <code>PLACED</code>, assigns the hiring company and package in <code>DataStore</code>, and saves the updated state to disk.</p>
+
+    <p><strong>For Student 4 (GUI & Analytics):</strong><br>
+    <em>Q: How is the GUI organized in Java Swing?</em><br>
+    A: The application uses a <code>JFrame</code> containing a <code>JTabbedPane</code> organizing six functional views. The interface runs on the Swing Event Dispatch Thread (EDT) using <code>SwingUtilities.invokeLater()</code> to guarantee thread safety and responsive operation.</p>
+
+    <div class="page-break"></div>
+
+    <!-- ==================== CHAPTER 9 ==================== -->
+    <h1>CHAPTER 9: CONCLUSION & FUTURE WORK</h1>
+    <h2>9.1 Conclusion</h2>
+    <p>
+      The <strong>Campus Placement Drive & Job Application Portal</strong> provides an authentic, reliable, and offline desktop solution 
+      for managing university campus recruitment. Built with standard Java Swing and CSV file persistence, it enforces qualification rules, 
+      prevents offer hoarding, tracks interview lifecycles, and computes institutional statistics without external database dependencies.
+    </p>
+
+    <h2>9.2 Future Scope</h2>
+    <ul>
+      <li><strong>Resume Parsing:</strong> Extracting skills from candidate PDF resumes using Apache PDFBox.</li>
+      <li><strong>Automated Notifications:</strong> Sending interview schedules via email or SMS webhooks.</li>
+      <li><strong>Optional Database Toggle:</strong> Providing a configurable switch between local CSV storage and MySQL / PostgreSQL.</li>
+    </ul>
+
+    <h2>REFERENCES</h2>
+    <ol>
+      <li>Schildt, Herbert. (2018). <em>Java: The Complete Reference</em>. McGraw-Hill Education, 11th Edition.</li>
+      <li>Eckstein, Robert, Loy, Marc, and Wood, Dave. (1998). <em>Java Swing</em>. O'Reilly Media.</li>
+      <li>Pressman, Roger S. (2014). <em>Software Engineering: A Practitioner's Approach</em>. McGraw-Hill Education, 8th Edition.</li>
+      <li>Oracle Corporation. (2023). <em>Java SE 17 Documentation: Package javax.swing</em>. Oracle Technology Network.</li>
+    </ol>
+
+  </div>
+
+</body>
+</html>
