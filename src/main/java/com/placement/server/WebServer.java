@@ -21,7 +21,10 @@ import java.util.concurrent.Executors;
 
 /**
  * Embedded HTTP Server for Campus Placement Portal.
- * Enables web browser access at http://localhost:8080 alongside the Swing Desktop GUI.
+ * Enables official college intranet web access at http://localhost:8080 alongside the Swing Desktop GUI.
+ * 
+ * @author Kshitij Jangam (PRN: 1032230618) & Aayush Sharma (PRN: 1032220990)
+ * College T&P Intranet HTTP Service Engine
  */
 public class WebServer {
 

@@ -8,6 +8,9 @@ import java.awt.*;
 /**
  * Main Application Window.
  * Contains menu bar, tabbed modules, and status bar.
+ * 
+ * @author Kshitij Jangam (PRN: 1032230618) - Team Lead
+ * Module: Swing GUI Master Container & Integration
  */
 public class MainFrame extends JFrame {
 
@@ -104,8 +107,13 @@ public class MainFrame extends JFrame {
         itemTeam.addActionListener(e -> showTeamDialog());
         JMenuItem itemAbout = new JMenuItem("About System");
         itemAbout.addActionListener(e -> JOptionPane.showMessageDialog(this,
-                "PlaceTrack - Campus Placement Portal\nDeveloped for 4th Year B.Tech CSE Mini Project.\nPlatform: Java Swing Desktop Application.",
-                "About PlaceTrack", JOptionPane.INFORMATION_MESSAGE));
+                "Campus Placement Drive & Job Application Portal\n" +
+                "4th Year B.Tech CSE Mini Project\n\n" +
+                "Team Members:\n" +
+                "1. Kshitij Jangam (PRN: 1032230618) - Team Lead\n" +
+                "2. Aayush Sharma  (PRN: 1032220990)\n\n" +
+                "Technology: Java Swing Desktop + Built-in Web Server + CSV Storage.",
+                "About Campus Placement Portal", JOptionPane.INFORMATION_MESSAGE));
         menuHelp.add(itemTeam);
         menuHelp.add(itemAbout);
 
@@ -136,11 +144,15 @@ public class MainFrame extends JFrame {
     }
 
     private void showTeamDialog() {
-        String msg = "4-STUDENT MODULE DIVISION:\n\n" +
-                "• Student 1: Student Profiles & Company Drives Registry (Student.java, CompanyDrive.java, DataStore.java)\n" +
-                "• Student 2: Automated Eligibility & Filtering Engine (EligibilityService.java, CGPA/Backlog checks)\n" +
-                "• Student 3: Candidate Recruitment Pipeline & Offer Workflow (Application.java, PipelinePanel.java)\n" +
-                "• Student 4: Institutional Analytics & GUI Integration (AnalyticsService.java, MainFrame.java)\n";
-        JOptionPane.showMessageDialog(this, msg, "Student Work Breakdown", JOptionPane.INFORMATION_MESSAGE);
+        String msg = "CAMPUS PLACEMENT PORTAL - TEAM & MODULE BREAKDOWN:\n\n" +
+                "1. Kshitij Jangam (PRN: 1032230618) - Team Lead\n" +
+                "   • Module 1: Student & Company Profile Registry\n" +
+                "   • Module 4: Swing GUI Integration, Analytics & Excel CSV Export\n" +
+                "   • Core Classes: Student.java, CompanyDrive.java, DataStore.java, AnalyticsService.java, MainFrame.java\n\n" +
+                "2. Aayush Sharma (PRN: 1032220990)\n" +
+                "   • Module 2: Automated Eligibility Verification Engine & 1.5x Dream Policy\n" +
+                "   • Module 3: Recruitment Pipeline & Interview Tracking System\n" +
+                "   • Core Classes: EligibilityService.java, EligibilityPanel.java, Application.java, PipelinePanel.java\n";
+        JOptionPane.showMessageDialog(this, msg, "Project Team Breakdown", JOptionPane.INFORMATION_MESSAGE);
     }
 }

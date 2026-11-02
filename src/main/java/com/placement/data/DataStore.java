@@ -13,7 +13,10 @@ import java.util.*;
 
 /**
  * Handles CSV file storage and retrieval for students, drives, and applications.
- * Enables offline, zero-database persistence.
+ * Enables 100% offline, zero-database flat-file persistence.
+ * 
+ * @author Kshitij Jangam (PRN: 1032230618) - Team Lead
+ * Module: Student & Company Profile Registry
  */
 public class DataStore {
 
@@ -210,6 +213,8 @@ public class DataStore {
         applications.clear();
 
         // Realistic B.Tech CSE / IT / ECE Student Profiles
+        students.add(new Student("1032230618", "Kshitij Jangam", "kshitij.cs@college.edu", "CSE", 9.20, 0, "Java, Spring Boot, Swing, SQL, Algorithms", "NOT PLACED", "", 0.0));
+        students.add(new Student("1032220990", "Aayush Sharma", "aayush.cs@college.edu", "CSE", 8.95, 0, "Java, Data Structures, System Design, REST APIs", "NOT PLACED", "", 0.0));
         students.add(new Student("1RV22CS001", "Aarav Sharma", "aarav.cs@college.edu", "CSE", 8.85, 0, "Java, Spring, MySQL, DSA", "PLACED", "Google", 28.5));
         students.add(new Student("1RV22CS014", "Priya Patel", "priya.cs@college.edu", "CSE", 8.40, 0, "Python, Django, AWS, SQL", "NOT PLACED", "", 0.0));
         students.add(new Student("1RV22IS022", "Rohan Verma", "rohan.is@college.edu", "ISE", 7.60, 0, "C++, Java, Linux, OOPs", "PLACED", "Infosys", 7.2));

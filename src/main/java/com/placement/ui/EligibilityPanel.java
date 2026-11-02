@@ -15,6 +15,10 @@ import java.util.List;
 
 /**
  * Automated Candidate Eligibility Evaluation and Application Panel.
+ * Evaluates CGPA cutoffs, standing backlogs, eligible branches, and the Dream Company 1.5x rule.
+ * 
+ * @author Aayush Sharma (PRN: 1032220990)
+ * Module: Automated Eligibility & Criteria Engine
  */
 public class EligibilityPanel extends JPanel {
 

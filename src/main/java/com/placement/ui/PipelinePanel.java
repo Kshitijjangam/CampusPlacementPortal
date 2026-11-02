@@ -15,6 +15,9 @@ import java.util.List;
 /**
  * Recruitment Pipeline Panel.
  * Tracks application progress across interview stages and handles automated offer synchronization.
+ * 
+ * @author Aayush Sharma (PRN: 1032220990)
+ * Module: Recruitment Pipeline & Interview Tracker
  */
 public class PipelinePanel extends JPanel {
 

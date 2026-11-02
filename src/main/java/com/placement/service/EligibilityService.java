@@ -7,7 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Service to evaluate eligibility criteria for placement drives.
+ * Service to evaluate multi-factor eligibility criteria for placement drives.
+ * Enforces CGPA cutoff, backlog cap, branch whitelist, and the Dream Company 1.5x rule.
+ * 
+ * @author Aayush Sharma (PRN: 1032220990)
+ * Module: Automated Eligibility & Criteria Engine
  */
 public class EligibilityService {
 

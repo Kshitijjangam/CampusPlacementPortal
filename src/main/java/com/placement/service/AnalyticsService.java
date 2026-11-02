@@ -5,7 +5,10 @@ import com.placement.model.Student;
 import java.util.*;
 
 /**
- * Computes placement statistics and KPIs for college administration reports.
+ * Computes institutional placement statistics, KPIs, and branch distributions.
+ * 
+ * @author Kshitij Jangam (PRN: 1032230618) - Team Lead
+ * Module: Analytics & Executive Reporting System
  */
 public class AnalyticsService {
 

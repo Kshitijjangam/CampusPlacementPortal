@@ -10,7 +10,10 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
 /**
- * Dashboard Panel displaying placement statistics and branch performance.
+ * Dashboard Panel displaying placement KPIs, summary cards, and branch performance.
+ * 
+ * @author Kshitij Jangam (PRN: 1032230618) - Team Lead
+ * Module: Analytics & Executive Reporting System
  */
 public class DashboardPanel extends JPanel {
 

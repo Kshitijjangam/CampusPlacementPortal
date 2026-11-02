@@ -13,9 +13,14 @@ echo [2/3] Compiling with javac...
 javac -encoding UTF-8 -d bin @sources.txt
 if errorlevel 1 (
     echo [ERROR] Compilation failed. Ensure JDK 17+ is installed.
-    del sources.txt
+    if exist sources.txt del sources.txt
     pause
     exit /b 1
+)
+
+if exist src\main\resources (
+    echo Copying web resources into bin...
+    xcopy /E /I /Y src\main\resources\* bin\ >nul
 )
 
 echo [3/3] Packaging into CampusPlacementPortal.jar...

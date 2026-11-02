@@ -11,7 +11,10 @@ import java.util.List;
 
 /**
  * Student Directory Management Panel.
- * Supports viewing, searching, adding, and deleting student profiles.
+ * Supports viewing, dynamic search filtering, and registering candidate profiles.
+ * 
+ * @author Kshitij Jangam (PRN: 1032230618) - Team Lead
+ * Module: Student & Company Profile Registry
  */
 public class StudentPanel extends JPanel {
 

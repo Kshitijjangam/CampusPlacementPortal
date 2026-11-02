@@ -11,6 +11,10 @@ import java.util.List;
 
 /**
  * Company Placement Drives Management Panel.
+ * Supports tabular viewing and registering new corporate hiring drives.
+ * 
+ * @author Kshitij Jangam (PRN: 1032230618) - Team Lead
+ * Module: Student & Company Profile Registry
  */
 public class DrivePanel extends JPanel {
 

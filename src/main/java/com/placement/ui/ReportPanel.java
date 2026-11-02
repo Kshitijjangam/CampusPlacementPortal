@@ -15,6 +15,10 @@ import java.util.List;
 
 /**
  * Report Generation and Data Export Panel.
+ * Generates formatted text summaries and exports placed student data to Excel CSV.
+ * 
+ * @author Kshitij Jangam (PRN: 1032230618) - Team Lead
+ * Module: Analytics & Executive Reporting System
  */
 public class ReportPanel extends JPanel {
 
