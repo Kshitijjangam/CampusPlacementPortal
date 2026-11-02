@@ -253,7 +253,6 @@
       border-radius: 4px;
     }
     .badge-pass { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
-    .badge-lead { background: #dbeafe; color: #1e40af; border: 1px solid #93c5fd; }
   </style>
 </head>
 <body>
@@ -286,41 +285,31 @@
         <span style="font-size: 14pt; color: #374151;">IN COMPUTER SCIENCE AND ENGINEERING</span>
       </div>
 
-      <div class="cover-by">SUBMITTED BY (TEAM OF 4):</div>
+      <div class="cover-by">SUBMITTED BY (TEAM OF 2):</div>
       <table class="cover-table">
         <thead>
           <tr>
             <th>Student Name</th>
-            <th>Roll No / USN</th>
-            <th>Assigned Module Role</th>
+            <th>PRN</th>
+            <th>Assigned Technical Modules</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td><strong>Kshitij Jangam (Lead)</strong></td>
-            <td>[USN-01]</td>
-            <td>Module 1: Student & Company Profile Registry</td>
+            <td>1032230618</td>
+            <td>Data Layer & Registries, Executive GUI Integration, Analytics & Excel CSV Export</td>
           </tr>
           <tr>
-            <td><strong>[Student 2 Name]</strong></td>
-            <td>[USN-02]</td>
-            <td>Module 2: Automated Eligibility & Criteria Engine</td>
-          </tr>
-          <tr>
-            <td><strong>[Student 3 Name]</strong></td>
-            <td>[USN-03]</td>
-            <td>Module 3: Application Pipeline & Interview Tracker</td>
-          </tr>
-          <tr>
-            <td><strong>[Student 4 Name]</strong></td>
-            <td>[USN-04]</td>
-            <td>Module 4: Swing GUI Integration & Analytics Reporting</td>
+            <td><strong>Aayush Sharma</strong></td>
+            <td>1032220990</td>
+            <td>Automated Eligibility Engine, Dream Company 1.5x Policy, Recruitment Pipeline & Auto-Offer Sync</td>
           </tr>
         </tbody>
       </table>
 
       <div class="cover-guide">
-        <em>Under the Guidance of</em><br>
+        <em>Under the Academic Guidance of</em><br>
         <strong style="font-size: 13pt; color: var(--primary);">[Guide Name]</strong><br>
         Assistant Professor, Department of Computer Science & Engineering
       </div>
@@ -343,8 +332,8 @@
     <p style="line-height: 1.8; margin-top: 30px;">
       This is to certify that the mini-project report entitled 
       <strong>"CAMPUS PLACEMENT DRIVE & JOB APPLICATION PORTAL"</strong> is a bonafide record of work carried out collaboratively by 
-      <strong>Kshitij Jangam (USN-01), [Student 2 Name] (USN-02), [Student 3 Name] (USN-03), and [Student 4 Name] (USN-04)</strong>, 
-      students of the 4th Year B.Tech in Computer Science & Engineering, in partial fulfillment of the requirements for the award of the degree of 
+      <strong>Kshitij Jangam (PRN: 1032230618) and Aayush Sharma (PRN: 1032220990)</strong>, 
+      students of 4th Year B.Tech in Computer Science & Engineering, in partial fulfillment of the requirements for the award of the degree of 
       <strong>Bachelor of Technology in Computer Science & Engineering</strong> of [University Name] during the academic year 2025–2026.
     </p>
     <p style="line-height: 1.8;">
@@ -402,10 +391,8 @@
     </p>
 
     <div style="margin-top: 50px;">
-      <p>1. <strong>Kshitij Jangam</strong> (USN: [USN-01]) &nbsp;&nbsp;&nbsp;&nbsp; Signature: ___________________________</p><br>
-      <p>2. <strong>[Student 2 Name]</strong> (USN: [USN-02]) &nbsp;&nbsp;&nbsp;&nbsp; Signature: ___________________________</p><br>
-      <p>3. <strong>[Student 3 Name]</strong> (USN: [USN-03]) &nbsp;&nbsp;&nbsp;&nbsp; Signature: ___________________________</p><br>
-      <p>4. <strong>[Student 4 Name]</strong> (USN: [USN-04]) &nbsp;&nbsp;&nbsp;&nbsp; Signature: ___________________________</p><br>
+      <p>1. <strong>Kshitij Jangam</strong> (PRN: 1032230618) &nbsp;&nbsp;&nbsp;&nbsp; Signature: ___________________________</p><br>
+      <p>2. <strong>Aayush Sharma</strong> (PRN: 1032220990) &nbsp;&nbsp;&nbsp;&nbsp; Signature: ___________________________</p><br><br>
       <p><strong>Date:</strong> ________________________</p>
       <p><strong>Place:</strong> [City, State]</p>
     </div>
@@ -441,20 +428,18 @@
     <p style="line-height: 1.8; margin-top: 25px;">
       Campus recruitment represents one of the most critical annual operations in engineering colleges, facilitating the transition of final-year 
       students into corporate engineering careers. Despite its importance, many college Training and Placement (T&P) cells continue to manage 
-      recruitment drives through fragmented Google Forms, paper logbooks, and complex spreadsheets. This manual paradigm creates severe bottlenecks: 
-      ineligible candidates apply by mistake, placed students hoard multiple job offers preventing unplaced peers from securing jobs, multi-stage 
-      interview tracking is uncoordinated, and compiling institutional placement metrics takes days of manual effort.
+      recruitment drives through fragmented Google Forms, paper sign-up sheets, and complex spreadsheets. This manual paradigm creates severe bottlenecks: 
+      ineligible candidates apply overlooked due to manual verification errors, placed students hoard multiple job offers preventing unplaced peers from securing jobs, multi-stage 
+      interview tracking is uncoordinated, and compiling institutional placement metrics takes days of manual data wrangling.
     </p>
     <p style="line-height: 1.8;">
       To address these challenges, this project presents the <strong>Campus Placement Drive & Job Application Portal</strong>, a desktop software 
       application engineered in Java using standard <strong>Java Swing (AWT / JFC)</strong> and lightweight <strong>CSV-based persistence</strong>. 
-      The system is designed with a strict 4-tier modular division across 4 students:
+      The system is designed with a balanced 2-student technical division:
     </p>
     <ul>
-      <li><strong>Module 1 (Student 1 - Lead):</strong> Candidate & Company Registry managing student records (USN, name, branch, CGPA, backlogs, skills) and recruitment drives (CTC, cutoffs, roles, dates).</li>
-      <li><strong>Module 2 (Student 2):</strong> Automated Eligibility Engine enforcing CGPA cutoffs, backlog limits, branch whitelists, and an institutional <strong>Dream Company 1.5x Upgrade Rule</strong>.</li>
-      <li><strong>Module 3 (Student 3):</strong> Multi-stage Recruitment Pipeline tracking candidates across 7 stages (APPLIED → SHORTLISTED → ONLINE_TEST → TECH_ROUND → HR_ROUND → OFFERED) with automated student offer synchronization.</li>
-      <li><strong>Module 4 (Student 4):</strong> Executive Swing GUI, Placement Analytics (highest/average CTC, branch-wise percentages), and one-click CSV export for Microsoft Excel.</li>
+      <li><strong>Kshitij Jangam (Team Lead, PRN: 1032230618):</strong> Spearheaded System Architecture, Persistence Engine (<code>DataStore.java</code>, CSV I/O), Candidate & Company Registries (<code>Student.java</code>, <code>CompanyDrive.java</code>, <code>StudentPanel.java</code>, <code>DrivePanel.java</code>), and the Executive GUI Integration & Institutional Analytics System (<code>MainFrame.java</code>, <code>DashboardPanel.java</code>, <code>ReportPanel.java</code>, <code>AnalyticsService.java</code>).</li>
+      <li><strong>Aayush Sharma (PRN: 1032220990):</strong> Spearheaded the Automated Eligibility Verification Engine (<code>EligibilityService.java</code>, <code>EligibilityPanel.java</code>) enforcing dynamic multi-criteria validation including CGPA cutoffs, backlog caps, branch whitelists, and the <strong>Dream Company 1.5x Upgrade Rule</strong>, alongside the Multi-Stage Recruitment Pipeline & Interview Tracker (<code>Application.java</code>, <code>PipelinePanel.java</code>) with automated offer-to-placement synchronization.</li>
     </ul>
     <p style="line-height: 1.8;">
       The entire system runs <strong>100% offline from a single executable JAR file with zero database configuration</strong>, providing a dependable, 
@@ -482,10 +467,10 @@
         <tr><td><strong>2</strong></td><td><strong>Literature Survey & Feasibility Analysis</strong></td><td><strong>4</strong></td></tr>
         <tr><td><strong>3</strong></td><td><strong>System Requirement Specifications (SRS)</strong></td><td><strong>7</strong></td></tr>
         <tr><td><strong>4</strong></td><td><strong>System Architecture & Design</strong></td><td><strong>10</strong></td></tr>
-        <tr><td><strong>5</strong></td><td><strong>Detailed Implementation & 4-Student Work Breakdown</strong></td><td><strong>15</strong></td></tr>
+        <tr><td><strong>5</strong></td><td><strong>Detailed Implementation & 2-Student Work Breakdown</strong></td><td><strong>15</strong></td></tr>
         <tr><td><strong>6</strong></td><td><strong>System Testing & Verification Matrix</strong></td><td><strong>22</strong></td></tr>
         <tr><td><strong>7</strong></td><td><strong>User Interface Walkthrough & Screenshots</strong></td><td><strong>25</strong></td></tr>
-        <tr><td><strong>8</strong></td><td><strong>Student Work Allocation & Viva-Voce Guide</strong></td><td><strong>29</strong></td></tr>
+        <tr><td><strong>8</strong></td><td><strong>Work Allocation & Viva-Voce Guide</strong></td><td><strong>29</strong></td></tr>
         <tr><td><strong>9</strong></td><td><strong>Conclusion & Future Work</strong></td><td><strong>35</strong></td></tr>
         <tr><td>—</td><td>References & Bibliography</td><td>37</td></tr>
       </tbody>
@@ -576,7 +561,7 @@
       • <strong>Technical Feasibility:</strong> The system is implemented using standard Java Foundation Classes (Swing / AWT) and Java NIO file persistence. It is completely independent of external database server software.<br>
       • <strong>Operational Feasibility:</strong> Standard desktop components (tabs, tables, search fields) ensure intuitive operation without specialized user training.<br>
       • <strong>Economic Feasibility:</strong> Utilizes open-source OpenJDK and zero-cost tools, incurring no licensing or cloud hosting costs.<br>
-      • <strong>Schedule Feasibility:</strong> Modular 4-part architecture allowed the 4-student team to complete development and testing within the academic term.
+      • <strong>Schedule Feasibility:</strong> Balanced division between Kshitij Jangam and Aayush Sharma enabled smooth completion and rigorous verification.
     </p>
 
     <div class="page-break"></div>
@@ -593,7 +578,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>FR-01</td><td>Student Registry</td><td>Add, view, search, and manage candidate profiles (USN, name, branch, CGPA, backlogs, skills).</td></tr>
+        <tr><td>FR-01</td><td>Student Registry</td><td>Add, view, search, and manage candidate profiles (PRN/USN, name, branch, CGPA, backlogs, skills).</td></tr>
         <tr><td>FR-02</td><td>Drive Registry</td><td>Record visiting companies with package (CTC in LPA), minimum CGPA, backlog cap, eligible branches, and dates.</td></tr>
         <tr><td>FR-03</td><td>Eligibility Engine</td><td>Execute deterministic criteria evaluation with detailed pass/fail feedback and button activation.</td></tr>
         <tr><td>FR-04</td><td>Dream Company Policy</td><td>Enforce that placed students can only apply for new drives offering at least 1.5x their current package.</td></tr>
@@ -609,7 +594,7 @@
       • <strong>NFR-01 (Portability):</strong> Operates on Windows, macOS, and Linux on any system supporting Java SE 8+.<br>
       • <strong>NFR-02 (Zero-Configuration):</strong> Operates out-of-the-box without installing MySQL, Oracle, or Web servers.<br>
       • <strong>NFR-03 (Performance):</strong> Instantaneous table search and eligibility evaluation in under 100 milliseconds.<br>
-      • <strong>NFR-04 (Data Integrity):</strong> Prevents duplicate student USNs and guarantees safe comma-separated record serialization.
+      • <strong>NFR-04 (Data Integrity):</strong> Prevents duplicate student identifiers and guarantees safe comma-separated record serialization.
     </p>
 
     <div class="page-break"></div>
@@ -660,36 +645,20 @@
     <div class="page-break"></div>
 
     <!-- ==================== CHAPTER 5 ==================== -->
-    <h1>CHAPTER 5: DETAILED IMPLEMENTATION BY MODULE</h1>
+    <h1>CHAPTER 5: DETAILED IMPLEMENTATION BY MODULE (2 STUDENTS)</h1>
     
-    <h2>5.1 Module 1: Student & Company Profile Registry (Student 1 - Lead)</h2>
+    <h2>5.1 Technical Division 1: Data Architecture, Registries & GUI Analytics (Kshitij Jangam)</h2>
     <p>
-      • <strong>Classes:</strong> <code>Student.java</code>, <code>CompanyDrive.java</code>, <code>DataStore.java</code>, <code>StudentPanel.java</code>, <code>DrivePanel.java</code><br>
-      • <strong>Implementation:</strong> Formulates core entity models, handles CSV reading/writing, and implements searchable tabular views using <code>TableRowSorter</code>. Pre-seeded realistic student records and top-tier company drives.
+      • <strong>Student Name & PRN:</strong> Kshitij Jangam (PRN: 1032230618) - Team Lead<br>
+      • <strong>Core Java Classes Owned:</strong> <code>Student.java</code>, <code>CompanyDrive.java</code>, <code>DataStore.java</code>, <code>StudentPanel.java</code>, <code>DrivePanel.java</code>, <code>AnalyticsService.java</code>, <code>DashboardPanel.java</code>, <code>ReportPanel.java</code>, <code>MainFrame.java</code>, <code>Main.java</code><br>
+      • <strong>Key Responsibilities:</strong> Formulated core data models, built CSV file serialization/parsing engine in <code>DataStore</code>, developed searchable directory tables with real-time substring filtering, constructed the master <code>MainFrame</code> desktop container, computed university-level recruitment KPIs, and created the Excel CSV export engine.
     </p>
 
-    <h2>5.2 Module 2: Automated Eligibility Engine (Student 2)</h2>
+    <h2>5.2 Technical Division 2: Automated Eligibility Engine & Pipeline Automation (Aayush Sharma)</h2>
     <p>
-      • <strong>Classes:</strong> <code>EligibilityService.java</code>, <code>EligibilityPanel.java</code><br>
-      • <strong>Implementation:</strong> Implements 4-factor eligibility verification:
-    </p>
-    <ul>
-      <li><strong>CGPA Cutoff:</strong> <code>student.getCgpa() &gt;= drive.getMinCgpa()</code></li>
-      <li><strong>Backlog Limit:</strong> <code>student.getActiveBacklogs() &lt;= drive.getMaxBacklogs()</code></li>
-      <li><strong>Branch Whitelist:</strong> <code>drive.getEligibleBranches().contains(student.getBranch())</code></li>
-      <li><strong>Dream Company Rule:</strong> If placed, <code>drive.getCtcLpa() &gt;= 1.5 * student.getPlacedPackageLpa()</code></li>
-    </ul>
-
-    <h2>5.3 Module 3: Recruitment Pipeline & Interview Tracker (Student 3)</h2>
-    <p>
-      • <strong>Classes:</strong> <code>Application.java</code>, <code>PipelinePanel.java</code><br>
-      • <strong>Implementation:</strong> Manages candidates across 7 progression stages. Includes an automated offer synchronization trigger: transitioning an application to <code>OFFERED</code> immediately marks the candidate as <code>PLACED</code>, stores company details, and saves the record.
-    </p>
-
-    <h2>5.4 Module 4: Swing GUI Integration & Analytics (Student 4)</h2>
-    <p>
-      • <strong>Classes:</strong> <code>AnalyticsService.java</code>, <code>DashboardPanel.java</code>, <code>ReportPanel.java</code>, <code>MainFrame.java</code>, <code>Main.java</code><br>
-      • <strong>Implementation:</strong> Orchestrates the primary <code>JTabbedPane</code> window with native look-and-feel. Computes university KPIs (placement percentage, average/highest CTC, branch distribution) and generates Excel-compatible CSV exports via <code>JFileChooser</code>.
+      • <strong>Student Name & PRN:</strong> Aayush Sharma (PRN: 1032220990)<br>
+      • <strong>Core Java Classes Owned:</strong> <code>EligibilityService.java</code>, <code>EligibilityPanel.java</code>, <code>Application.java</code>, <code>PipelinePanel.java</code><br>
+      • <strong>Key Responsibilities:</strong> Programmed multi-factor qualification algorithms (CGPA, Backlogs, Branch Whitelist), implemented the <strong>Dream Company 1.5x Upgrade Rule</strong>, designed the visual qualification audit panel with color-coded feedback badges, engineered the 7-stage recruitment workflow lifecycle, and developed the automated offer-to-placement synchronization trigger.
     </p>
 
     <div class="page-break"></div>
@@ -707,7 +676,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>TC-01</td><td>Student Registry</td><td>Register student USN 1RV22CS099, CGPA 8.75</td><td>Profile saved to CSV and rendered in table</td><td><span class="badge badge-pass">PASSED</span></td></tr>
+        <tr><td>TC-01</td><td>Student Registry</td><td>Register candidate PRN 1032230618, CGPA 8.75</td><td>Profile saved to CSV and rendered in table</td><td><span class="badge badge-pass">PASSED</span></td></tr>
         <tr><td>TC-02</td><td>Drive Registry</td><td>Add drive: Google, 28.5 LPA, Min CGPA 8.5</td><td>Drive saved to CSV and visible in eligibility tab</td><td><span class="badge badge-pass">PASSED</span></td></tr>
         <tr><td>TC-03</td><td>Dynamic Search</td><td>Search "Aarav" in Student Directory</td><td>JTable dynamically isolates matching candidate record</td><td><span class="badge badge-pass">PASSED</span></td></tr>
         <tr><td>TC-04</td><td>Eligibility Check</td><td>Aarav (CGPA 8.85, 0 backlogs) vs Google (8.5)</td><td>All checks PASS; Application button enabled</td><td><span class="badge badge-pass">PASSED</span></td></tr>
@@ -742,60 +711,49 @@
 
     <!-- ==================== CHAPTER 8 ==================== -->
     <h1>CHAPTER 8: WORK ALLOCATION & VIVA-VOCE GUIDE</h1>
-    <h2>8.1 4-Student Work Allocation Matrix</h2>
+    <h2>8.1 2-Student Work Allocation Matrix</h2>
     <table>
       <thead>
         <tr>
           <th>Student & Role</th>
-          <th>Module Owned</th>
+          <th>Technical Modules Owned</th>
           <th>Core Classes</th>
           <th>Key Responsibilities</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>Student 1 (Lead)<br>Kshitij Jangam</strong></td>
-          <td>Module 1: Student & Company Profile Registry</td>
-          <td><code>Student.java</code><br><code>CompanyDrive.java</code><br><code>DataStore.java</code><br><code>StudentPanel.java</code></td>
-          <td>Entity modeling, CSV file serialization, searchable tables, sample data seeding.</td>
+          <td><strong>Kshitij Jangam<br>PRN: 1032230618</strong><br><em>(Team Lead)</em></td>
+          <td>Data Layer, Registries, Executive GUI & Analytics</td>
+          <td><code>Student.java</code><br><code>CompanyDrive.java</code><br><code>DataStore.java</code><br><code>StudentPanel.java</code><br><code>DrivePanel.java</code><br><code>AnalyticsService.java</code><br><code>DashboardPanel.java</code><br><code>ReportPanel.java</code><br><code>MainFrame.java</code><br><code>Main.java</code></td>
+          <td>Entity modeling, CSV file serialization, searchable tables, native OS look-and-feel, KPI calculations, and Excel CSV export engine.</td>
         </tr>
         <tr>
-          <td><strong>Student 2<br>[Student 2 Name]</strong></td>
-          <td>Module 2: Automated Eligibility Engine</td>
-          <td><code>EligibilityService.java</code><br><code>EligibilityPanel.java</code></td>
-          <td>Multi-criteria qualification algorithms, Dream Company 1.5x rule, real-time feedback UI.</td>
-        </tr>
-        <tr>
-          <td><strong>Student 3<br>[Student 3 Name]</strong></td>
-          <td>Module 3: Application Pipeline & Interviews</td>
-          <td><code>Application.java</code><br><code>PipelinePanel.java</code></td>
-          <td>7-stage recruitment lifecycle, interview scheduling, automated placement offer sync.</td>
-        </tr>
-        <tr>
-          <td><strong>Student 4<br>[Student 4 Name]</strong></td>
-          <td>Module 4: Swing GUI & Analytics</td>
-          <td><code>AnalyticsService.java</code><br><code>DashboardPanel.java</code><br><code>ReportPanel.java</code><br><code>MainFrame.java</code></td>
-          <td>Main JTabbedPane container, native OS look-and-feel, KPI calculation, CSV report exporter.</td>
+          <td><strong>Aayush Sharma<br>PRN: 1032220990</strong></td>
+          <td>Eligibility Engine & Pipeline Automation</td>
+          <td><code>EligibilityService.java</code><br><code>EligibilityPanel.java</code><br><code>Application.java</code><br><code>PipelinePanel.java</code></td>
+          <td>Multi-criteria qualification algorithms, Dream Company 1.5x rule, real-time feedback UI, 7-stage recruitment pipeline, and automated offer-to-placement synchronization.</td>
         </tr>
       </tbody>
     </table>
 
     <h2>8.2 Viva-Voce Q&A Cheat Sheet</h2>
-    <p><strong>For Student 1 (Profile & Drive Management):</strong><br>
-    <em>Q: Why use CSV rather than MySQL or SQLite?</em><br>
-    A: For an engineering mini-project, portability and zero-configuration are critical. MySQL requires external server services and configuration that often break on external examiner laptops. CSV flat files provide human-readable, reliable persistence handled natively by Java without setup friction.</p>
+    
+    <p><strong>Section A: For Kshitij Jangam (Data Layer, Registries & GUI Analytics):</strong><br>
+    <em>Q: Why did you choose CSV files rather than MySQL or SQLite?</em><br>
+    A: For an engineering mini-project, portability and zero-configuration are critical. MySQL requires external server services and configuration that often break on external examiner laptops. CSV flat files provide human-readable, reliable persistence handled natively by Java without setup friction.<br><br>
+    <em>Q: How does the application prevent duplicate student entries?</em><br>
+    A: In <code>DataStore.java</code>, student records are indexed by their unique PRN/USN. During <code>addStudent()</code> execution, the system checks whether a student with the given PRN already exists. If found, an exception is raised, preventing duplicates.<br><br>
+    <em>Q: How does the application ensure thread safety in Java Swing?</em><br>
+    A: All GUI rendering and updates run on the Swing Event Dispatch Thread (EDT) using <code>SwingUtilities.invokeLater(() -> new MainFrame().setVisible(true))</code>, preventing threading conflicts.</p>
 
-    <p><strong>For Student 2 (Automated Eligibility Engine):</strong><br>
-    <em>Q: What is the Dream Company 1.5x rule?</em><br>
-    A: To prevent offer hoarding where placed candidates monopolize lower-tier drives, our policy restricts placed candidates to new drives offering at least 150% of their current package (<code>New CTC &gt;= 1.5 * Current CTC</code>).</p>
-
-    <p><strong>For Student 3 (Recruitment Pipeline):</strong><br>
+    <p style="margin-top: 15px;"><strong>Section B: For Aayush Sharma (Eligibility Engine & Pipeline Automation):</strong><br>
+    <em>Q: What is the Dream Company 1.5x rule and why is it implemented?</em><br>
+    A: To prevent offer hoarding where placed candidates monopolize lower-tier drives, our policy restricts placed candidates to new drives offering at least 150% of their current package (<code>New CTC &gt;= 1.5 * Current CTC</code>).<br><br>
+    <em>Q: What are the sequential stages in your recruitment pipeline?</em><br>
+    A: The application models the standard engineering recruitment process across seven distinct stages: <code>APPLIED</code> → <code>SHORTLISTED</code> → <code>ONLINE_TEST</code> → <code>TECHNICAL_INTERVIEW</code> → <code>HR_INTERVIEW</code> → <code>OFFERED</code> (or <code>REJECTED</code>).<br><br>
     <em>Q: How does automated offer synchronization work?</em><br>
     A: When an application is moved to <code>OFFERED</code> in <code>PipelinePanel</code>, the system automatically marks the candidate as <code>PLACED</code>, assigns the hiring company and package in <code>DataStore</code>, and saves the updated state to disk.</p>
-
-    <p><strong>For Student 4 (GUI & Analytics):</strong><br>
-    <em>Q: How is the GUI organized in Java Swing?</em><br>
-    A: The application uses a <code>JFrame</code> containing a <code>JTabbedPane</code> organizing six functional views. The interface runs on the Swing Event Dispatch Thread (EDT) using <code>SwingUtilities.invokeLater()</code> to guarantee thread safety and responsive operation.</p>
 
     <div class="page-break"></div>
 
